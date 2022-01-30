@@ -220,3 +220,30 @@
 .hidden {
   visibility: hidden;
 }
+
+.product--new {
+  &::after {
+    position: absolute;
+    content: "NEW";
+    font-family: $font-roboto;
+    font-size: $font-size-xs;
+    color: $main-color;
+    background-color: $product-new;
+    padding: 4px 8px;
+    border-radius: 4px;
+
+    @include desktopOnly {
+      top: 11%;
+      left: 6%;
+    }
+
+    @include tabletOnly {
+      top: 57%;
+      left: 30%;
+    }
+
+    @include mobileOnly {
+      left: 15%;
+    }
+  }
+}

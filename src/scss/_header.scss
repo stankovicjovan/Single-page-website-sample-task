@@ -16,17 +16,17 @@
   justify-content: space-between;
   align-items: center;
   overflow: visible;
+  padding-top: 10px;
 
   @include desktopOnly {
-    height: 150px;
+    height: 140px;
   }
 
   @include tabletOnly {
-    height: 111px;
+    height: 101px;
   }
 
   @include mobileOnly {
-    padding-top: 0.7rem;
     flex-direction: column;
   }
 }

@@ -15,7 +15,7 @@ let scrollTop = window.pageYOffset;
 window.addEventListener("scroll", function () {
   let st = window.pageYOffset;
   if (window.scrollY > 75 && scrollTop < st) {
-    navBar.style.top = "-175px";
+    navBar.style.top = "-275px";
   } else if (scrollTop > st && window.scrollY > 76) {
     navBar.style.top = "0";
   }
@@ -46,6 +46,7 @@ const productPrice = document.querySelector(".js-modal-price");
 const productName = document.querySelector(".js-modal-name");
 const productCheckboxes = document.querySelectorAll(".js-check");
 const productForm = document.querySelector(".js-form");
+const productModalCard = document.querySelector(".product__modal__left");
 
 const openModal = function (e) {
   e.preventDefault();
@@ -54,7 +55,16 @@ const openModal = function (e) {
 
   // changing modal image (src is usually just url, but becouse of parcel it has to be localhost targeted to be shown in preview)
   const dataSrc = e.target.dataset.src;
+
+  console.log(dataSrc.includes("q7"));
   productImage.src = `http://localhost:1234/${dataSrc}`;
+
+  // adding new
+  if (dataSrc.includes("q7") || dataSrc.includes("a3")) {
+    productModalCard.classList.add("product--new");
+  } else {
+    productModalCard.classList.remove("product--new");
+  }
 
   let dataPrice = +e.target.dataset.price;
   productPrice.innerHTML = `${dataPrice} €`;
