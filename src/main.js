@@ -38,6 +38,7 @@ const modal = document.querySelector(".js-modal");
 const overlay = document.querySelector(".js-overlay");
 const btnsOpenModal = document.querySelectorAll(".js-open-modal");
 const btnCloseModal = document.querySelector(".js-close-modal");
+const btnBuyModal = document.querySelector(".js-buy-modal");
 
 // product modal properties
 const productImage = document.querySelector(".js-product-modal");
@@ -94,6 +95,7 @@ for (let i = 0; i < btnsOpenModal.length; i++)
 // close
 btnCloseModal.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
+btnBuyModal.addEventListener("click", closeModal);
 
 // esc btn
 document.addEventListener("keydown", function (e) {

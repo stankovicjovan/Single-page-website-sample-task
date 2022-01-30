@@ -18,6 +18,7 @@
   }
   @include mobileOnly {
     width: 90%;
+    position: fixed;
   }
 }
 
@@ -115,10 +116,12 @@
   border-radius: 15px;
   background-color: $dark-color;
   color: $main-color;
+  cursor: pointer;
 
   &--price {
     font-size: $font-size-m;
     padding-top: 0.5rem;
+    cursor: pointer;
   }
 
   @include mobileOnly {
