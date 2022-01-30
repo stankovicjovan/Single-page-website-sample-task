@@ -1,0 +1,150 @@
+// slick slider properties
+button.slick-prev.slick-arrow {
+  left: -0.7%;
+  z-index: 1;
+  top: 46%;
+
+  &::before {
+    font-size: 35px;
+    font-weight: bold;
+    padding: 0 1rem 0.8rem 1rem;
+    color: gray;
+    content: "‹";
+    position: absolute;
+    @include desktopOnly {
+      border: 1px solid $text-links;
+      background-color: $dark-color;
+    }
+  }
+}
+button.slick-next.slick-arrow {
+  z-index: 1;
+  top: 46%;
+  @include desktopOnly {
+    right: 2.6%;
+  }
+  @include absFix {
+    right: 3%;
+  }
+  @include tabletOnly {
+    right: 5%;
+  }
+  @include mobileOnly {
+    right: 11%;
+  }
+
+  &::before {
+    font-size: 35px;
+    font-weight: bold;
+    padding: 0 1rem 0.8rem 1rem;
+    color: gray;
+    content: "›";
+    position: absolute;
+    @include desktopOnly {
+      border: 1px solid $text-links;
+      background-color: $dark-color;
+    }
+  }
+}
+
+.banner {
+  position: relative;
+}
+.slider {
+  position: relative;
+  height: 100%;
+}
+.slider__image-wrap {
+  position: relative;
+  @include desktopOnly {
+    padding-bottom: 17%;
+  }
+  @include tabletOnly {
+    padding-bottom: 20%;
+  }
+
+  @include mobileOnly {
+    padding-bottom: 35%;
+  }
+}
+.slider__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+// banner content
+.banner__content {
+  position: absolute;
+  left: 10.5%;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+
+  @include desktopOnly {
+    top: 32%;
+    width: 35%;
+  }
+
+  @include tabletOnly {
+    top: 28%;
+    width: 45%;
+  }
+  @include mobileOnly {
+    top: 32%;
+    width: 75%;
+    left: 12%;
+  }
+}
+.banner__subheading {
+  font-size: $font-size-xs;
+  font-family: $font-roboto;
+  letter-spacing: 4px;
+  color: $text-subheader;
+  padding-bottom: 1rem;
+}
+.banner__heading {
+  line-height: 1.2;
+  color: $main-color;
+  padding-bottom: 2.7rem;
+
+  @include desktopOnly {
+    font-size: $font-size-xl;
+  }
+
+  @include tabletOnly {
+    font-size: $font-size-l;
+  }
+
+  @include mobileOnly {
+    font-size: $font-size-m;
+    padding-bottom: 1.5rem;
+  }
+}
+.banner__text {
+  color: $main-color;
+  border-left: 2px solid $border-color;
+  padding-left: 1.5rem;
+  font-size: $font-size-s;
+
+  @include desktopOnly {
+    margin-left: 1.3rem;
+    width: 70%;
+  }
+  @include tabletOnly {
+    margin-left: 0.5em;
+    width: 62%;
+  }
+  @include mobileOnly {
+    width: 80%;
+    margin-left: 0;
+    font-size: $font-size-xs;
+  }
+}

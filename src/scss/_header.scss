@@ -1,0 +1,139 @@
+.navbar {
+  font-family: $font-roboto;
+  font-size: $font-size-s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  transition: all 0.5s ease;
+  background-color: rgba($secondary-color, 0.8);
+}
+
+.navbar-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: visible;
+
+  @include desktopOnly {
+    height: 150px;
+  }
+
+  @include tabletOnly {
+    height: 111px;
+  }
+
+  @include mobileOnly {
+    padding-top: 0.7rem;
+    flex-direction: column;
+  }
+}
+
+.navbar__content {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 37%;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+
+  @include mobileOnly {
+    gap: 0;
+  }
+}
+
+.navbar__list {
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+.navbar__item {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 1.35rem;
+  border-bottom: 2px solid transparent;
+
+  &:hover {
+    border-bottom: 2px solid $border-color;
+    cursor: pointer;
+
+    a {
+      color: $main-color;
+    }
+  }
+
+  @include mobileOnly {
+    font-size: $font-size-xs;
+    padding: 0 0.8rem;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}
+
+.navbar__sublist__item {
+  padding: 0.7rem 0.3rem;
+  border-bottom: 1px solid $text-links;
+  cursor: pointer;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover a {
+    color: $text-subheader;
+  }
+}
+
+.navbar__btn {
+  font-family: $font-roboto;
+  font-size: $font-size-s;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  background-color: $dark-color;
+  color: $main-color;
+  border-radius: 5px;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $text-subheader;
+    cursor: pointer;
+  }
+
+  @include mobileOnly {
+    font-size: $font-size-xs;
+    padding: 0.7rem 1rem;
+  }
+}
+
+.navbar__sublist {
+  z-index: 3;
+  display: none;
+  position: absolute;
+  top: 95%;
+  left: 15%;
+  padding: 0 1.5rem 0 0.5rem;
+  background-color: $dark-color;
+  width: 135px;
+  border-top: 2px solid $border-color;
+  font-size: $font-size-xs;
+}
+
+.navbar__item--list {
+  position: relative;
+  border-bottom: none;
+  white-space: nowrap;
+  &:hover {
+    border-bottom: none;
+    background-color: transparent;
+
+    .navbar__sublist {
+      display: block;
+    }
+  }
+}

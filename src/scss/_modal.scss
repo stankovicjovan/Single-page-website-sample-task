@@ -1,0 +1,219 @@
+// modal window
+
+.product__modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+
+  @include tabletOnly {
+    flex-direction: column;
+  }
+  @include mobileOnly {
+    width: 90%;
+  }
+}
+
+.product__modal__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(240, 240, 240);
+
+  @include desktopOnly {
+    border-radius: 20px 0 0 20px;
+    padding: 4rem;
+  }
+  @include tabletOnly {
+    padding: 2rem;
+    border-radius: 0 0 20px 20px;
+    order: 2;
+  }
+  @include mobileOnly {
+    padding: 1rem;
+  }
+}
+
+.product__modal__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-basis: 60%;
+  gap: 1rem;
+
+  @include desktopOnly {
+    padding: 2rem 2rem 0 0;
+  }
+  @include tabletOnly {
+    padding: 2rem;
+    order: 1;
+  }
+  @include mobileOnly {
+    padding: 1rem 0.5rem 0 0.5rem;
+    gap: 0;
+  }
+}
+
+.product__modal__form {
+  width: 100%;
+  flex-basis: 100%;
+}
+
+.product__modal__item {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba($text-links, 0.3);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  & label {
+    padding-left: 2rem;
+    color: $secondary-color;
+  }
+
+  p {
+    white-space: nowrap;
+  }
+}
+
+.product__modal__heading {
+  font-size: $font-size-basic-m;
+}
+.product__modal__text {
+  font-size: $font-size-s;
+  color: $text-links;
+}
+
+.product__modal__item {
+  display: flex;
+  justify-content: space-between;
+
+  @include mobileOnly {
+    font-size: $font-size-xs;
+  }
+}
+
+.product__modal__price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  padding: 1rem;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 15px;
+  background-color: $dark-color;
+  color: $main-color;
+
+  &--price {
+    font-size: $font-size-m;
+    padding-top: 0.5rem;
+  }
+
+  @include mobileOnly {
+    margin-top: 1rem;
+  }
+}
+
+.product__modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.product__modal__close {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  font-size: 2.5rem;
+  color: $main-color;
+  padding: 0 0.7rem;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+// custom checkboxes in modal
+
+//checkbox holder
+.custom__container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// hide regular checkmark
+.custom__container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+// custom chckbx
+.custom__checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: $main-color;
+  border: 1px solid $secondary-color;
+  cursor: pointer;
+}
+
+// bg when checked
+.custom__container input:checked ~ .custom__checkmark {
+  background-color: $dark-color;
+}
+
+// creat custom indicator
+.custom__checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+// show when chckd
+.custom__container input:checked ~ .custom__checkmark:after {
+  display: block;
+}
+
+// Style ckcmark
+.custom__container .custom__checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.hidden {
+  visibility: hidden;
+}

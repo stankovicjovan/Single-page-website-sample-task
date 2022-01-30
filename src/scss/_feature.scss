@@ -1,0 +1,155 @@
+.feature {
+  position: relative;
+}
+
+.banner__image-wrap {
+  position: relative;
+
+  @include desktopOnly {
+    padding-bottom: 37.5%;
+  }
+  @include tabletOnly {
+    padding-bottom: 53%;
+  }
+  @include mobileOnly {
+    padding-bottom: 67%;
+  }
+
+  &:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, $secondary-color, transparent);
+    z-index: 2;
+  }
+}
+
+.banner__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.feature__content {
+  position: absolute;
+  left: 10.5%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  @include desktopOnly {
+    top: 14%;
+    width: 40%;
+  }
+
+  @include absFix {
+    top: 1%;
+  }
+  @include tabletOnly {
+    top: 7%;
+    width: 60%;
+  }
+  @include mobileOnly {
+    width: 89%;
+    top: 3%;
+    left: 7%;
+  }
+}
+
+.feature__heading {
+  color: $main-color;
+
+  @include desktopOnly {
+    padding-bottom: 2rem;
+    font-size: $font-size-2l;
+  }
+  @include tabletOnly {
+    padding-bottom: 1.5rem;
+    font-size: $font-size-l;
+  }
+  @include mobileOnly {
+    font-size: $font-size-basic-m;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.feature__subheading {
+  @extend .about__subheading;
+
+  @include mobileOnly {
+    padding-bottom: 0;
+  }
+}
+
+.feature__content-bottom {
+  display: flex;
+  justify-content: space-evenly;
+
+  @include mobileOnly {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+.feature__text {
+  color: $text-links;
+  font-size: $font-size-s;
+
+  @include desktopOnly {
+    padding-bottom: 2rem;
+  }
+  @include tabletOnly {
+    padding-bottom: 1.5rem;
+    color: $main-color;
+  }
+  @include mobileOnly {
+    font-size: $font-size-xs;
+    padding-bottom: 0.5rem;
+    font-weight: 400;
+    line-height: 1.35;
+  }
+}
+
+.feature__item {
+  padding: 1rem 0;
+  background-color: rgba($text-links, 0.4);
+  color: $main-color;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba($main-color, 0.5);
+
+  @include mobileOnly {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.feature__subheading--item {
+  color: $main-color;
+  font-weight: 400;
+
+  @include mobileOnly {
+    letter-spacing: 0;
+  }
+}
+
+.feature__item__main {
+  padding-bottom: 0.3rem;
+
+  @include mobileOnly {
+    padding-bottom: 0;
+  }
+}
+.feature__item__submain {
+  font-weight: 400;
+}

@@ -1,0 +1,137 @@
+.about {
+  @include desktopOnly {
+    padding: 7rem 0 5rem 0;
+  }
+
+  @include tabletOnly {
+    padding: 0;
+  }
+  @include mobileOnly {
+    padding: 1rem 0;
+  }
+}
+
+.about-wrap {
+  display: flex;
+  justify-content: space-between;
+
+  @include mobileOnly {
+    flex-direction: column;
+  }
+}
+.about__content-left {
+  position: relative;
+  display: flex;
+
+  @include desktopOnly {
+    justify-content: flex-end;
+    flex-basis: 45%;
+  }
+  @include tabletOnly {
+    justify-content: space-around;
+    flex-basis: 60%;
+  }
+  @include mobileOnly {
+    flex-direction: column;
+    order: 2;
+  }
+}
+
+.about__content-left__bg {
+  background-color: $dark-color;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  @include desktopOnly {
+    flex-basis: 68%;
+  }
+  @include tabletOnly {
+    flex-basis: 78%;
+  }
+  @include mobileOnly {
+    flex-basis: 85%;
+    order: 2;
+    background-color: transparent;
+  }
+}
+
+.about__content-left__text {
+  padding-bottom: 2rem;
+  font-size: $font-size-xs;
+  color: $text-links;
+  font-style: italic;
+
+  @include mobileOnly {
+    padding-bottom: 1rem;
+  }
+}
+
+.about__content-left__image {
+  position: absolute;
+
+  @include desktopOnly {
+    top: 25%;
+    left: 15%;
+  }
+
+  @include tabletOnly {
+    width: 100%;
+    top: 24%;
+    left: 0;
+  }
+  @include mobileOnly {
+    position: relative;
+    order: 1;
+  }
+}
+
+.about__content-right {
+  flex-basis: 38%;
+  padding: 4rem 0;
+
+  @include mobileOnly {
+    order: 1;
+    padding: 1rem 0;
+  }
+}
+
+.about__subheading {
+  @extend .banner__subheading;
+}
+
+.about__heading {
+  line-height: 1.2;
+  font-size: $font-size-2l;
+
+  @include desktopOnly {
+    padding-bottom: 2.5rem;
+  }
+  @include tabletOnly {
+    padding-bottom: 1.5rem;
+  }
+  @include mobileOnly {
+    font-size: $font-size-l;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.about__text {
+  font-size: $font-size-basic;
+  padding-bottom: 1.5rem;
+
+  @include mobileOnly {
+    font-size: $font-size-s;
+    padding-bottom: 1rem;
+  }
+}
+
+.about__text-small {
+  font-size: $font-size-s;
+
+  @include mobileOnly {
+    font-size: $font-size-xs;
+  }
+}

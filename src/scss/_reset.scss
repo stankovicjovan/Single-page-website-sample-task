@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  background: $text-light;
+  color: $text-dark;
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li,
+small,
+address,
+span {
+  cursor: default;
+}
+
+a,
+label {
+  text-decoration: none;
+  color: $text-links;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+
+  @include desktopOnly {
+    max-width: $website-width;
+    padding: 0 40px;
+  }
+  @include tabletOnly {
+    max-width: 100%;
+    padding: 0 30px;
+  }
+  @include mobileOnly {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.content-container {
+  max-width: $content-width;
+  margin: auto;
+  overflow: hidden;
+
+  @include tabletOnly {
+    padding: 0 30px;
+  }
+}

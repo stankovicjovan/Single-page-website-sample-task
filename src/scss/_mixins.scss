@@ -1,0 +1,25 @@
+@import "configuration";
+
+@mixin mobileOnly {
+  @media screen and (max-width: $breakpointMobile) {
+    @content;
+  }
+}
+
+@mixin tabletOnly {
+  @media screen and (max-width: $breakpointTablet) {
+    @content;
+  }
+}
+
+@mixin absFix {
+  @media screen and (max-width: $breakpointFix) {
+    @content;
+  }
+}
+
+@mixin desktopOnly {
+  @media screen and (min-width: $breakpointDesktop) {
+    @content;
+  }
+}
