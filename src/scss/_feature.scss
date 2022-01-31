@@ -56,6 +56,11 @@
     width: 60%;
   }
   @include mobileOnly {
+    top: 13%;
+    width: 75%;
+  }
+
+  @include mobileFix {
     width: 89%;
     top: 3%;
     left: 7%;
@@ -74,6 +79,10 @@
     font-size: $font-size-l;
   }
   @include mobileOnly {
+    font-size: $font-size-m;
+    padding-bottom: 1.5rem;
+  }
+  @include mobileFix {
     font-size: $font-size-basic-m;
     padding-bottom: 0.5rem;
   }
@@ -92,8 +101,15 @@
   justify-content: space-evenly;
 
   @include mobileOnly {
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+
+  @include mobileFix {
     justify-content: center;
     gap: 1rem;
+    padding-top: 0;
   }
 }
 
@@ -109,6 +125,10 @@
     color: $main-color;
   }
   @include mobileOnly {
+    font-size: $font-size-s;
+    padding-bottom: 0.5rem;
+  }
+  @include mobileFix {
     font-size: $font-size-xs;
     padding-bottom: 0.5rem;
     font-weight: 400;
@@ -129,6 +149,11 @@
   border: 1px solid rgba($main-color, 0.5);
 
   @include mobileOnly {
+    width: 125px;
+    height: 125px;
+  }
+
+  @include mobileFix {
     width: 100px;
     height: 100px;
   }

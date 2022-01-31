@@ -2,7 +2,7 @@
 $(".slider").slick({
   dots: false,
   infinite: true,
-  speed: 500,
+  speed: 600,
   fade: true,
   cssEase: "linear",
   arrows: true,
@@ -53,10 +53,8 @@ const openModal = function (e) {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
 
-  // changing modal image (src is usually just url, but becouse of parcel it has to be localhost targeted to be shown in preview)
+  // changing modal image (url adapted to parcel)
   const dataSrc = e.target.dataset.src;
-
-  console.log(dataSrc.includes("q7"));
   productImage.src = `http://localhost:1234/${dataSrc}`;
 
   // adding new
@@ -72,16 +70,21 @@ const openModal = function (e) {
   // checking checkboxes price
   // changing price
   productForm.addEventListener("click", function (e) {
-    let startingPrice;
+    let additionalPrice;
     if (e.target.closest(".js-check")) {
       if (e.target.checked) {
-        startingPrice = +e.target.value;
+        additionalPrice = +e.target.value;
       } else {
-        startingPrice = -e.target.value;
+        additionalPrice = -e.target.value;
       }
-      let stn = +startingPrice.toFixed(2);
-      dataPrice += stn;
-      productPrice.innerHTML = `${dataPrice.toFixed(2)} €`;
+      dataPrice += additionalPrice;
+      const dataPriceFixed = dataPrice.toFixed(2);
+      // getting decimals
+      const decimals = String(dataPriceFixed).slice(-2);
+
+      productPrice.innerHTML = `${
+        decimals !== "00" ? dataPriceFixed : Number(dataPriceFixed).toFixed(0)
+      } €`;
     }
   });
 
@@ -98,16 +101,16 @@ const closeModal = function () {
   productCheckboxes.forEach((cbox) => (cbox.checked = false));
 };
 
-// open
+// open modal
 for (let i = 0; i < btnsOpenModal.length; i++)
   btnsOpenModal[i].addEventListener("click", openModal);
 
-// close
+// close modal
 btnCloseModal.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
 btnBuyModal.addEventListener("click", closeModal);
 
-// esc btn
+// esc btn close modal
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape" && !modal.classList.contains("hidden")) {
     closeModal();

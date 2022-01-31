@@ -1,5 +1,11 @@
 @import "configuration";
 
+@mixin mobileFix {
+  @media screen and (max-width: 520px) {
+    @content;
+  }
+}
+
 @mixin mobileOnly {
   @media screen and (max-width: $breakpointMobile) {
     @content;

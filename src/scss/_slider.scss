@@ -62,8 +62,11 @@ button.slick-next.slick-arrow {
   @include tabletOnly {
     padding-bottom: 20%;
   }
-
   @include mobileOnly {
+    padding-bottom: 30%;
+  }
+
+  @include mobileFix {
     padding-bottom: 35%;
   }
 }
@@ -98,6 +101,10 @@ button.slick-next.slick-arrow {
     width: 45%;
   }
   @include mobileOnly {
+    width: 70%;
+  }
+
+  @include mobileFix {
     top: 32%;
     width: 75%;
     left: 12%;
@@ -124,6 +131,10 @@ button.slick-next.slick-arrow {
   }
 
   @include mobileOnly {
+    font-size: $font-size-l;
+  }
+
+  @include mobileFix {
     font-size: $font-size-m;
     padding-bottom: 1.5rem;
   }
@@ -142,7 +153,12 @@ button.slick-next.slick-arrow {
     margin-left: 0.5em;
     width: 62%;
   }
+
   @include mobileOnly {
+    font-size: $font-size-s;
+  }
+
+  @include mobileFix {
     width: 80%;
     margin-left: 0;
     font-size: $font-size-xs;

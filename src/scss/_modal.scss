@@ -1,7 +1,7 @@
 // modal window
 
 .product__modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -18,7 +18,6 @@
   }
   @include mobileOnly {
     width: 90%;
-    position: fixed;
   }
 }
 
@@ -73,6 +72,9 @@
   padding: 1rem 0;
   border-bottom: 1px solid rgba($text-links, 0.3);
 
+  display: flex;
+  justify-content: space-between;
+
   &:last-child {
     border-bottom: none;
   }
@@ -84,20 +86,28 @@
 
   p {
     white-space: nowrap;
+
+    @include mobileOnly {
+      font-size: $font-size-xs;
+    }
+  }
+
+  @include mobileOnly {
+    font-size: 12px;
+    padding: 0.75rem 0;
   }
 }
 
 .product__modal__heading {
   font-size: $font-size-basic-m;
+
+  @include mobileOnly {
+    font-size: $font-size-basic;
+  }
 }
 .product__modal__text {
   font-size: $font-size-s;
   color: $text-links;
-}
-
-.product__modal__item {
-  display: flex;
-  justify-content: space-between;
 
   @include mobileOnly {
     font-size: $font-size-xs;
